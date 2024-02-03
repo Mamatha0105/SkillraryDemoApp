@@ -7,7 +7,7 @@ import org.testng.asserts.SoftAssert;
 
 import genericLibraries.BaseClass;
 import genericLibraries.IConstantPath;
-
+// This Script is used to verify useer is able to add a category
 public class AddCategoryTest extends  BaseClass{
 
 	@Test
