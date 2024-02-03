@@ -1,6 +1,6 @@
 package testScripts;
 
-//This TestScript got Failed because the page is not working
+//This TestScript got Failed 
 
 import java.util.Map;
 import org.testng.annotations.Test;
