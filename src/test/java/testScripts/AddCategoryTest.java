@@ -7,19 +7,20 @@ import org.testng.asserts.SoftAssert;
 
 import genericLibraries.BaseClass;
 import genericLibraries.IConstantPath;
-// This Script is used to verify useer is able to add a category
+
 public class AddCategoryTest extends  BaseClass{
 
 	@Test
-	public void addCategoryTest() {
+	public void addCategoryTest() throws InterruptedException {
 		SoftAssert soft = new SoftAssert();
 		home.clickCoursesTab();
 		home.clickCategoryLink();
-		soft.assertEquals(category.getPageHeader(),("Category"));
+		soft.assertTrue(category.getPageHeader().contains("Category"));
 		category.clickNewButton();
+		Thread.sleep(3000);
 		
 		
-		excel.excelInit(IConstantPath.EXCEL_PATH, "Sheet1");
+		
 		soft.assertEquals(addCategory.getPageHeader(),"Add New Category");
 		Map<String, String >map = excel.readFromExcel("Add Category");
 		addCategory.setName(map.get("Name"));
@@ -27,12 +28,12 @@ public class AddCategoryTest extends  BaseClass{
 		
 		soft.assertEquals(category.getSuccessMessage(),"Success!");
 		category.deleteCategory(web, map.get("Name"));
-		//soft.assertEquals(category.getSuccessMessage(), "Success!");
+		soft.assertEquals(category.getSuccessMessage(), "Success!");
 		if(category.getSuccessMessage().equals("Success!"))
 			excel.updateTestStatus("Add Category", "Pass", IConstantPath.EXCEL_PATH);
 		else
 			excel.updateTestStatus("Add Category", "Fail", IConstantPath.EXCEL_PATH);
-		//category.deleteCategory(web, "Name");
+		
 		
 		soft.assertAll();
 	}

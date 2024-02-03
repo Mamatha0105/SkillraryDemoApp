@@ -15,24 +15,6 @@
           <include name="addUserTest"/>
         </methods>
       </class> <!-- testScripts.AddUserTest -->
-      <class name="testScripts.AddCategoryTest">
-        <methods>
-          <include name="methodSetup"/>
-          <include name="classSetup"/>
-          <include name="methodTearDown"/>
-          <include name="classTearDown"/>
-          <include name="addCategoryTest"/>
-        </methods>
-      </class> <!-- testScripts.AddCategoryTest -->
-      <class name="testScripts.AddCourseList">
-        <methods>
-          <include name="methodSetup"/>
-          <include name="classSetup"/>
-          <include name="methodTearDown"/>
-          <include name="classTearDown"/>
-          <include name="addCourseTest"/>
-        </methods>
-      </class> <!-- testScripts.AddCourseList -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

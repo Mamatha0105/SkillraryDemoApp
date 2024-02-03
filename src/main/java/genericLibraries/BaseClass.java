@@ -66,8 +66,7 @@ public class BaseClass {
 		addCourse = new AddNewCoursePage(driver);
 		addCategory = new AddNewCategoryPage(driver);
 
-		
-		property.propertiesInit(IConstantPath.PROPERTIES_FILE_PATH);
+		excel.excelInit(IConstantPath.EXCEL_PATH, "Sheet1");
 	
 		web.navigateToApp(property.readFromProperties("url"));
 		Assert.assertEquals(login.getPageHeader(), "Login");
